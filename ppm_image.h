@@ -17,6 +17,11 @@ namespace agl
 
   class ppm_image
   {
+
+  private:
+      int wid;
+      int hgt;
+      ppm_pixel* img;
   public:
      ppm_image();
      ppm_image(int width, int height);
