@@ -8,7 +8,6 @@ int main(int argc, char** argv)
    ppm_image image;
    image.load("../images/feep.ppm");
    image.save("feep-test-save.ppm"); // should match original
-   
    // should print 4 4
    cout << "loaded feep: " << image.width() << " " << image.height() << endl;
 
@@ -39,6 +38,7 @@ int main(int argc, char** argv)
    ppm_image resize = image.resize(200,300);
    resize.save("earth-200-300.ppm");
 
+
    // grayscale
    ppm_image grayscale = image.grayscale(); 
    grayscale.save("earth-grayscale.ppm");
@@ -62,8 +62,8 @@ int main(int argc, char** argv)
    ppm_image soup;
    soup.load("../images/soup-ascii.ppm");
 
-   int y = (int) (0.5f * (image.width() - soup.width()));
-   int x = (int) (0.5f * (image.height() - soup.height()));
+   int x = (int) (0.5f * (image.width() - soup.width()));
+   int y = (int) (0.5f * (image.height() - soup.height()));
    ppm_image background = image.subimage(x, y, soup.width(), soup.height());
    background.save("background-test.ppm");
    ppm_image blend = background.alpha_blend(soup, 0.5f);
