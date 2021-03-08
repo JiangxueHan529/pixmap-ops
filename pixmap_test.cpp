@@ -69,5 +69,20 @@ int main(int argc, char** argv)
    ppm_image blend = background.alpha_blend(soup, 0.5f);
    image.replace(blend, x, y);
    image.save("earth-blend-0.5.ppm");
+
+   image.load("../images/earth-ascii.ppm");
+   ppm_image swirl = image.swirl_color();
+   swirl.save("earth-swirled-color.ppm");
+   ppm_image invert_color = image.invert_color();
+   invert_color.save("earth-inverted-color.ppm");
+   ppm_image extracted_green = image.extract_green();
+   extracted_green.save("earth-extract-green.ppm");
+
+   ppm_image lightest = image.lightest(invert_color);
+   lightest.save("earth-lightest.ppm");
+   ppm_image darkest = image.darkest(invert_color);
+   darkest.save("earth-darkest.ppm");
+
+
 }
 

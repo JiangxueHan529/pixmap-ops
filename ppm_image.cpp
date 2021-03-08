@@ -192,6 +192,66 @@ ppm_image ppm_image::grayscale() const
    return result;
 }
 
+ppm_image ppm_image::swirl_color() const
+{
+    ppm_image result = ppm_image(wid, hgt);
+    int total = wid * hgt;
+    for (int i = 0; i < total;i++) {
+        result.img[i].r = img[i].g;
+        result.img[i].g = img[i].b;
+        result.img[i].b = img[i].r;
+    }
+    return result;
+}
+ppm_image ppm_image::invert_color() const
+{
+    ppm_image result = ppm_image(wid, hgt);
+    int total = wid * hgt;
+    for (int i = 0; i < total;i++) {
+        result.img[i].r = 255 - img[i].r;
+        result.img[i].g = 255 - img[i].g;
+        result.img[i].b = 255 - img[i].b;
+    }
+    return result;
+}
+
+ppm_image ppm_image::extract_green() const
+{
+    ppm_image result = ppm_image(wid, hgt);
+    int total = wid * hgt;
+    for (int i = 0; i < total;i++) {
+        result.img[i].r = 0;
+        result.img[i].g = img[i].g;
+        result.img[i].b = 0;
+    }
+    return result;
+}
+
+ppm_image ppm_image::darkest(ppm_image other) const
+{   
+    ppm_image result = ppm_image(wid, hgt);
+    int total = wid * hgt;
+    for (int i = 0; i < total;i++) {
+        result.img[i].r = min(img[i].r, other.img[i].r);
+        result.img[i].g = min(img[i].g, other.img[i].g);
+        result.img[i].b = min(img[i].b, other.img[i].b);
+    }
+    return result;
+
+}
+
+ppm_image ppm_image::lightest(ppm_image other) const
+{
+    ppm_image result = ppm_image(wid, hgt);
+    int total = wid * hgt;
+    for (int i = 0; i < total;i++) {
+        result.img[i].r = max(img[i].r, other.img[i].r);
+        result.img[i].g = max(img[i].g, other.img[i].g);
+        result.img[i].b = max(img[i].b, other.img[i].b);
+    }
+    return result;
+
+}
 ppm_pixel ppm_image::get(int row, int col) const
 {
     if (row == 0) {

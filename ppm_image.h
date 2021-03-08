@@ -63,8 +63,25 @@ namespace agl
      // Return a copy of this image converted to grayscale
      ppm_image grayscale() const;
 
+     //Return a copy of this image with swirled color
+     ppm_image swirl_color() const;
+
+     //Return a copy of this image with inverted color
+     ppm_image invert_color() const;
+
+     //Return a copy of image with extracted green channel
+     ppm_image extract_green() const;
+
+
+     //Get the lightest pixels from the two images
+     ppm_image lightest(ppm_image other) const;
+
+     //Get the darkest pixels from the two images
+     ppm_image darkest(ppm_image other) const;
+
      // Get the pixel at index (row, col)
      ppm_pixel get(int row, int col) const;
+
 
      // Set the pixel at index (row, col)
      void set(int row, int col, const ppm_pixel& c);
