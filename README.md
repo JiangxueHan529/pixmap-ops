@@ -44,10 +44,27 @@ pixmap-ops/build $ ../bin/pixmap_art
 ```
 
 ## Image operators
+These are the additional methods I created for my ppm_image class:
+     //Return a copy of this image with swirled color
+     ppm_image swirl_color() const;
 
-TODO: Document the features of your PPM image class here. Include example images.
+     //Return a copy of this image with inverted color
+     ppm_image invert_color() const;
+
+     //Return a copy of image with extracted green channel
+     ppm_image extract_green() const;
+
+
+     //Get the lightest pixels from the two images
+     ppm_image lightest(ppm_image other) const;
+
+     //Get the darkest pixels from the two images
+     ppm_image darkest(ppm_image other) const;
+
+     //Return a copy of image blurred
+     ppm_image blur() const;
 
 ## Results
 
-TODO: Show artworks using your class
+
 
