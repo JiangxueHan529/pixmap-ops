@@ -250,8 +250,29 @@ ppm_image ppm_image::lightest(ppm_image other) const
         result.img[i].b = max(img[i].b, other.img[i].b);
     }
     return result;
-
 }
+
+ppm_image ppm_image::blur() const
+{
+    ppm_image result = ppm_image(wid, hgt);
+    for (int i = 0; i < hgt; i++) {
+        for (int j = 0; j < wid; j++) {
+            if (i == 0 || j == 0 || i == hgt - 1 || j == wid -1 ) {
+                result.img[i * wid + j] = img[i * wid + j];
+            }
+            else {
+                result.img[i*wid+j].r = (int)(img[i*wid+j].r+ img[i*wid + j+1].r + img[(i + 1)*wid +j].r + img[(i + 1) * wid + j + 1].r +
+                    img[i * wid + j - 1].r + img[(i + 1) * wid + j - 1].r + img[(i-1)*wid + j].r + img[(i-1)*wid + j - 1].r + img[(i-1)*wid + j + 1].r) / 9;
+                result.img[i * wid + j].g = (int)(img[i * wid + j].g + img[i * wid + j + 1].g + img[(i + 1) * wid + j].g + img[(i + 1) * wid + j + 1].g +
+                    img[i * wid + j - 1].g + img[(i + 1) * wid + j - 1].g + img[(i - 1) * wid + j].g + img[(i - 1) * wid + j - 1].g + img[(i - 1) * wid + j + 1].g) / 9;
+                result.img[i * wid + j].b = (int)(img[i * wid + j].b + img[i * wid + j + 1].b + img[(i + 1) * wid + j].b + img[(i + 1) * wid + j + 1].b +
+                    img[i * wid + j - 1].b + img[(i + 1) * wid + j - 1].b + img[(i - 1) * wid + j].b + img[(i - 1) * wid + j - 1].b + img[(i - 1) * wid + j + 1].b) / 9;
+            }
+            }
+    }
+    return result;
+}
+
 ppm_pixel ppm_image::get(int row, int col) const
 {
     if (row == 0) {

@@ -83,6 +83,9 @@ int main(int argc, char** argv)
    ppm_image darkest = image.darkest(invert_color);
    darkest.save("earth-darkest.ppm");
 
+   ppm_image blurred = image.blur();
+   blurred.save("earth-blurred.ppm");
+
 
 }
 

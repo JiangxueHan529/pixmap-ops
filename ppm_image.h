@@ -79,6 +79,9 @@ namespace agl
      //Get the darkest pixels from the two images
      ppm_image darkest(ppm_image other) const;
 
+     //Return a copy of image blurred
+     ppm_image blur() const;
+
      // Get the pixel at index (row, col)
      ppm_pixel get(int row, int col) const;
 
