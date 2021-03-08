@@ -44,7 +44,8 @@ pixmap-ops/build $ ../bin/pixmap_art
 ```
 
 ## Image operators
-These are the additional methods I created for my ppm_image class:
+These are the additional methods I created for my ppm_image class: 
+
      //Return a copy of this image with swirled color
      ppm_image swirl_color() const;
 
@@ -67,7 +68,9 @@ These are the additional methods I created for my ppm_image class:
 ## Results
 
 https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/art-work-1.ppm
+
 https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/art-work.ppm
+
 https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/after-blur.ppm
 
 
