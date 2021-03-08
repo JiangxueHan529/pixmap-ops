@@ -66,11 +66,15 @@ These are the additional methods I created for my ppm_image class:
      ppm_image blur() const;
 
 ## Results
+Because ppm images are not directly visible here, I also include screenshots.
 
 https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/art-work-1.ppm
+https://github.com/JiangxueHan529/pixmap-ops/blob/main/images/art-work-1.jpg
 
 https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/art-work.ppm
+https://github.com/JiangxueHan529/pixmap-ops/blob/main/images/art-work.jpg
 
 https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/after-blur.ppm
+https://github.com/JiangxueHan529/pixmap-ops/blob/main/images/after-blur.jpg
 
 
