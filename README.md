@@ -66,5 +66,8 @@ These are the additional methods I created for my ppm_image class:
 
 ## Results
 
+https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/art-work-1.ppm
+https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/art-work.ppm
+https://github.com/JiangxueHan529/pixmap-ops/blob/main/unique_images/after-blur.ppm
 
 
